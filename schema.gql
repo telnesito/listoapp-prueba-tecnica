@@ -1,0 +1,24 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreateCompanyDto {
+  name: String!
+  age: Int!
+  breed: String!
+}
+
+type Query {
+  saludar: String!
+  getAllCompanys: [CreateCompanyDto!]!
+}
+
+type Mutation {
+  Companys(input: EmpresaInput!): [CreateCompanyDto!]!
+}
+
+input EmpresaInput {
+  name: String!
+  age: Int!
+  breed: String!
+}
