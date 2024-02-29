@@ -34,10 +34,10 @@ export class CompanyService {
   }
 
   async updateCompany(companyId: string, updateCompanyDto: CompanyInput): Promise<Company> {
-    const companyById = await this.companyModel.findById(companyId).exec()
-    if (!companyById) {
+    const updatedCompany = await this.companyModel.findByIdAndUpdate(companyId, updateCompanyDto, { new: true })
+    if (!updatedCompany) {
       throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
     }
-    return this.companyModel.findByIdAndUpdate(companyId, updateCompanyDto, { new: true })
+    return updatedCompany
   }
 }
