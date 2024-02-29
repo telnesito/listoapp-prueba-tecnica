@@ -36,18 +36,50 @@ type Mutation {
 }
 
 input CompanyInput {
+  """El nombre de la empresa"""
   name: String!
+
+  """Una breve descripción de la empresa y sus actividades"""
   description: String!
+
+  """La ubicación física de la empresa (dirección, ciudad, país)"""
   location: String!
+
+  """ El sector al que pertenece la empresa (tecnología, salud, finanzas, etc.)
+  """
   sector: String!
+
+  """ La cantidad de empleados que tiene la empresa."""
   employees: Int!
+
+  """Los ingresos anuales de la empresa"""
   annualRevenue: Float
+
+  """La dirección web de la empresa"""
   website: String
+
+  """El correo electrónico de contacto de la empresa"""
   email: String!
+
+  """La fecha en que fue fundada la empresa."""
   foundedDate: DateTime!
+
+  """El número de teléfono de la empresa."""
   phone: String!
+
+  """
+  Estado actual de la empresa (activo, inactivo, en proceso de liquidación, etc.)
+  """
   status: String!
+
+  """Puede ser una clasificación como PYME, startup, corporación, etc."""
   companyType: String!
+
+  """Este campo almacena el servicios que ofrezca la empresa"""
   services: String!
+
+  """
+  Enlaces a perfiles de redes sociales de la empresa (LinkedIn, Twitter, etc.).
+  """
   socialMedia: String
 }
