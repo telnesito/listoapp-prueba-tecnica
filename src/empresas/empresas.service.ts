@@ -26,7 +26,7 @@ export class CompanyService {
   }
 
   async getCompanyById(companyId: string): Promise<Company> {
-    const companyById = this.companyModel.findById(companyId)
+    const companyById = await this.companyModel.findById(companyId).exec()
     if (!companyById) {
       throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
     }
