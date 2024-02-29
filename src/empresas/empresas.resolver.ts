@@ -22,7 +22,7 @@ export class EmpresasResolver {
   }
 
   @Mutation(() => [CreateCompanyDto])
-  async Companys(@Args('input') input: EmpresaInput) {
+  async createCompanys(@Args('input') input: EmpresaInput) {
     return this.companyService.create(input)
   }
 

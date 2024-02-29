@@ -3,10 +3,27 @@
 # ------------------------------------------------------
 
 type CreateCompanyDto {
+  id: ID!
   name: String!
-  age: Int!
-  breed: String!
+  description: String!
+  location: String!
+  sector: String!
+  employees: Int!
+  annualRevenue: Float!
+  website: String!
+  email: String!
+  foundedDate: DateTime!
+  phone: Int!
+  status: String!
+  companyType: String!
+  services: String!
+  socialMedia: String!
 }
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
 
 type Query {
   saludar: String!
@@ -14,11 +31,23 @@ type Query {
 }
 
 type Mutation {
-  Companys(input: EmpresaInput!): [CreateCompanyDto!]!
+  createCompanys(input: EmpresaInput!): [CreateCompanyDto!]!
 }
 
 input EmpresaInput {
+  id: ID!
   name: String!
-  age: Int!
-  breed: String!
+  description: String!
+  location: String!
+  sector: String!
+  employees: Int!
+  annualRevenue: Float!
+  website: String!
+  email: String!
+  foundedDate: DateTime!
+  phone: Int!
+  status: String!
+  companyType: String!
+  services: String!
+  socialMedia: String!
 }
