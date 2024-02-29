@@ -33,6 +33,7 @@ type Query {
 type Mutation {
   createCompanys(input: CompanyInput!): CompanyType!
   deleteCompanyById(_id: String!): CompanyType!
+  updateCompany(_id: String!, input: CompanyInput!): CompanyType!
 }
 
 input CompanyInput {

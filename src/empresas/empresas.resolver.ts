@@ -31,5 +31,10 @@ export class CompanyResolver {
     return this.companyService.getCompanyById(_id)
   }
 
+  @Mutation(() => CompanyType)
+  async updateCompany(@Args('_id') _id: string, @Args('input') input: CompanyInput) {
+    return this.companyService.updateCompany(_id, input)
+  }
+
 
 }
