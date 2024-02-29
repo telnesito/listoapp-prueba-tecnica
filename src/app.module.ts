@@ -14,7 +14,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
     }),
     ConfigModule.forRoot({
-      envFilePath: '.develop.env'
+      envFilePath: '.env.development.local'
     }),
 
     EmpresasModule,

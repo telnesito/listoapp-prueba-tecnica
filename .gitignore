@@ -39,10 +39,10 @@ lerna-debug.log*
 .env
 .env.development.local
 .env.test.local
-.develop.env
+
 .env.production.local
 .env.local
-.credentials.env
+
 
 # temp directory
 .temp
