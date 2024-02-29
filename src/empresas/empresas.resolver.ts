@@ -1,12 +1,12 @@
 import { Resolver, Query, Mutation, Args } from "@nestjs/graphql";
-import { EmpresasService } from "./empresas.service";
+import { CompanyService } from "./empresas.service";
 import { CompanyType } from "./dto/create-empresa.dto";
 import { CompanyInput } from "./input/empresa.input";
 
 @Resolver()
-export class EmpresasResolver {
+export class CompanyResolver {
   constructor(
-    private readonly companyService: EmpresasService,
+    private readonly companyService: CompanyService,
 
   ) { }
 

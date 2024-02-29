@@ -2,22 +2,22 @@
 import { Model } from 'mongoose';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Empresa } from './interfaces/empresas.interface';
+import { Company } from './interfaces/empresas.interface';
 import { CompanyInput } from './input/empresa.input';
 @Injectable()
-export class EmpresasService {
-  constructor(@InjectModel('Empresa') private companyModel: Model<Empresa>) { }
+export class CompanyService {
+  constructor(@InjectModel('Company') private companyModel: Model<Company>) { }
 
-  async create(CreateCompanyDto: CompanyInput): Promise<Empresa> {
+  async create(CreateCompanyDto: CompanyInput): Promise<Company> {
     const createdCompany = new this.companyModel(CreateCompanyDto);
     return createdCompany.save();
   }
 
-  async findAll(): Promise<Empresa[]> {
+  async findAll(): Promise<Company[]> {
     return this.companyModel.find().exec();
   }
 
-  async deleteById(companyId: string): Promise<Empresa> {
+  async deleteById(companyId: string): Promise<Company> {
     const deletedCompany = await this.companyModel.findByIdAndDelete(companyId).exec()
     if (!deletedCompany) {
       throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
@@ -25,7 +25,7 @@ export class EmpresasService {
     return deletedCompany
   }
 
-  async getCompanyById(companyId: string): Promise<Empresa> {
+  async getCompanyById(companyId: string): Promise<Company> {
     const companyById = this.companyModel.findById(companyId)
     if (!companyById) {
       throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
