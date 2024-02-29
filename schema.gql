@@ -2,22 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type CreateCompanyDto {
+type CompanyType {
   id: ID!
   name: String!
   description: String!
   location: String!
   sector: String!
   employees: Int!
-  annualRevenue: Float!
-  website: String!
+  annualRevenue: Float
+  website: String
   email: String!
   foundedDate: DateTime!
   phone: Int!
   status: String!
   companyType: String!
   services: String!
-  socialMedia: String!
+  socialMedia: String
 }
 
 """
@@ -26,28 +26,28 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Query {
-  getAllCompanys: [CreateCompanyDto!]!
-  getCompanyById(_id: String!): CreateCompanyDto!
+  getAllCompanys: [CompanyType!]!
+  getCompanyById(_id: String!): CompanyType!
 }
 
 type Mutation {
-  createCompanys(input: EmpresaInput!): CreateCompanyDto!
-  deleteCompanyById(_id: String!): CreateCompanyDto!
+  createCompanys(input: CompanyInput!): CompanyType!
+  deleteCompanyById(_id: String!): CompanyType!
 }
 
-input EmpresaInput {
+input CompanyInput {
   name: String!
   description: String!
   location: String!
   sector: String!
   employees: Int!
-  annualRevenue: Float!
-  website: String!
+  annualRevenue: Float
+  website: String
   email: String!
   foundedDate: DateTime!
   phone: Int!
   status: String!
   companyType: String!
   services: String!
-  socialMedia: String!
+  socialMedia: String
 }

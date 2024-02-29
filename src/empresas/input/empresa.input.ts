@@ -1,9 +1,10 @@
-import { InputType, Field, Int, ID } from "@nestjs/graphql";
+import { InputType, Field, Int } from "@nestjs/graphql";
+import { IsOptional } from "class-validator";
 @InputType()
-export class EmpresaInput {
+export class CompanyInput {
 
   @Field()
-  readonly name: string;
+  readonly name!: string;
 
   @Field()
   readonly description: string;
@@ -17,10 +18,10 @@ export class EmpresaInput {
   @Field(() => Int)
   readonly employees: number;
 
-  @Field()
+  @Field({ nullable: true })
   readonly annualRevenue: number;
 
-  @Field()
+  @Field({ nullable: true })
   readonly website: string;
 
   @Field()
@@ -41,7 +42,7 @@ export class EmpresaInput {
   @Field()
   readonly services: string;
 
-  @Field()
+  @Field({ nullable: true })
   readonly socialMedia: string;
 
 }

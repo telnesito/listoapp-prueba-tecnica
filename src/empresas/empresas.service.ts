@@ -3,12 +3,12 @@ import { Model } from 'mongoose';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Empresa } from './interfaces/empresas.interface';
-import { EmpresaInput } from './input/empresa.input';
+import { CompanyInput } from './input/empresa.input';
 @Injectable()
 export class EmpresasService {
   constructor(@InjectModel('Empresa') private companyModel: Model<Empresa>) { }
 
-  async create(CreateCompanyDto: EmpresaInput): Promise<Empresa> {
+  async create(CreateCompanyDto: CompanyInput): Promise<Empresa> {
     const createdCompany = new this.companyModel(CreateCompanyDto);
     return createdCompany.save();
   }

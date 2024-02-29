@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { EmpresasResolver } from './empresas.resolver';
 import { MongooseModule } from '@nestjs/mongoose';
-import { EmpresaSchema } from './empresas.schema';
+import { CompanySchema } from './empresas.schema';
 import { EmpresasService } from './empresas.service';
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Empresa', schema: EmpresaSchema }])
+    MongooseModule.forFeature([{ name: 'Company', schema: CompanySchema }])
 
   ],
   providers: [EmpresasResolver, EmpresasService]

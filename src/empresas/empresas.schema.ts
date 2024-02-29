@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const EmpresaSchema = new mongoose.Schema({
+export const CompanySchema = new mongoose.Schema({
 
   name: String,
 

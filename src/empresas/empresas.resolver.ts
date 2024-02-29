@@ -1,7 +1,7 @@
 import { Resolver, Query, Mutation, Args } from "@nestjs/graphql";
 import { EmpresasService } from "./empresas.service";
-import { CreateCompanyDto } from "./dto/create-empresa.dto";
-import { EmpresaInput } from "./input/empresa.input";
+import { CompanyType } from "./dto/create-empresa.dto";
+import { CompanyInput } from "./input/empresa.input";
 
 @Resolver()
 export class EmpresasResolver {
@@ -11,22 +11,22 @@ export class EmpresasResolver {
   ) { }
 
 
-  @Query(() => [CreateCompanyDto])
+  @Query(() => [CompanyType])
   async getAllCompanys() {
     return this.companyService.findAll()
   }
 
-  @Mutation(() => CreateCompanyDto)
-  async createCompanys(@Args('input') input: EmpresaInput) {
+  @Mutation(() => CompanyType)
+  async createCompanys(@Args('input') input: CompanyInput) {
     return this.companyService.create(input)
   }
 
-  @Mutation(() => CreateCompanyDto)
+  @Mutation(() => CompanyType)
   async deleteCompanyById(@Args('_id') _id: string) {
     return this.companyService.deleteById(_id)
   }
 
-  @Query(() => CreateCompanyDto)
+  @Query(() => CompanyType)
   async getCompanyById(@Args('_id') _id: string) {
     return this.companyService.getCompanyById(_id)
   }

@@ -1,8 +1,9 @@
 import { Field, ID, Int, ObjectType } from "@nestjs/graphql";
+import { IsOptional } from "class-validator";
 
 @ObjectType()
 // Data transfer object
-export class CreateCompanyDto {
+export class CompanyType {
   @Field(() => ID)
   id: string
 
@@ -21,10 +22,10 @@ export class CreateCompanyDto {
   @Field(() => Int)
   readonly employees: number;
 
-  @Field()
+  @Field({ nullable: true })
   readonly annualRevenue: number;
 
-  @Field()
+  @Field({ nullable: true })
   readonly website: string;
 
   @Field()
@@ -45,6 +46,6 @@ export class CreateCompanyDto {
   @Field()
   readonly services: string;
 
-  @Field()
+  @Field({ nullable: true })
   readonly socialMedia: string;
 }
