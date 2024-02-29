@@ -31,7 +31,7 @@ type Query {
 }
 
 type Mutation {
-  createCompanys(input: EmpresaInput!): [CreateCompanyDto!]!
+  createCompanys(input: EmpresaInput!): CreateCompanyDto!
 }
 
 input EmpresaInput {

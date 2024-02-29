@@ -21,7 +21,7 @@ export class EmpresasResolver {
     return this.companyService.findAll()
   }
 
-  @Mutation(() => [CreateCompanyDto])
+  @Mutation(() => CreateCompanyDto)
   async createCompanys(@Args('input') input: EmpresaInput) {
     return this.companyService.create(input)
   }
