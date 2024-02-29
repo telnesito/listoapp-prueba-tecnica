@@ -1,5 +1,5 @@
 import { InputType, Field, Int } from "@nestjs/graphql";
-import { IsOptional } from "class-validator";
+import { IsEmail } from "class-validator";
 @InputType()
 export class CompanyInput {
 
@@ -23,7 +23,7 @@ export class CompanyInput {
 
   @Field({ nullable: true })
   readonly website: string;
-
+  @IsEmail()
   @Field()
   readonly email: string;
 

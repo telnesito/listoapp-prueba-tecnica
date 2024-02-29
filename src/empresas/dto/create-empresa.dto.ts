@@ -1,5 +1,5 @@
 import { Field, ID, Int, ObjectType } from "@nestjs/graphql";
-import { IsOptional } from "class-validator";
+import { IsEmail } from "class-validator";
 
 @ObjectType()
 // Data transfer object
@@ -27,7 +27,7 @@ export class CompanyType {
 
   @Field({ nullable: true })
   readonly website: string;
-
+  @IsEmail()
   @Field()
   readonly email: string;
 
