@@ -2,9 +2,6 @@ import { InputType, Field, Int, ID } from "@nestjs/graphql";
 @InputType()
 export class EmpresaInput {
 
-  @Field(() => ID)
-  readonly id: string
-
   @Field()
   readonly name: string;
 

@@ -26,16 +26,15 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Query {
-  saludar: String!
   getAllCompanys: [CreateCompanyDto!]!
 }
 
 type Mutation {
   createCompanys(input: EmpresaInput!): CreateCompanyDto!
+  deleteCompanyById(id: String!): CreateCompanyDto!
 }
 
 input EmpresaInput {
-  id: ID!
   name: String!
   description: String!
   location: String!

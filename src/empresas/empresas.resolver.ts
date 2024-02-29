@@ -10,11 +10,6 @@ export class EmpresasResolver {
 
   ) { }
 
-  @Query(() => String)
-  async saludar() {
-    return 'Hola como estas?'
-  }
-
 
   @Query(() => [CreateCompanyDto])
   async getAllCompanys() {
@@ -26,6 +21,10 @@ export class EmpresasResolver {
     return this.companyService.create(input)
   }
 
+  @Mutation(() => CreateCompanyDto)
+  async deleteCompanyById(@Args('id') id: string) {
+    return this.companyService.deleteById(id)
+  }
 
 
 }

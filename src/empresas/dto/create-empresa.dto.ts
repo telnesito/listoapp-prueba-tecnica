@@ -4,7 +4,7 @@ import { Field, ID, Int, ObjectType } from "@nestjs/graphql";
 
 export class CreateCompanyDto {
   @Field(() => ID)
-  readonly id: string
+  id: string
 
   @Field()
   readonly name: string;

@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 export const EmpresaSchema = new mongoose.Schema({
-  id: String,
 
   name: String,
 

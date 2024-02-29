@@ -1,6 +1,6 @@
 
 import { Model } from 'mongoose';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Empresa } from './interfaces/empresas.interface';
 import { EmpresaInput } from './input/empresa.input';
@@ -15,5 +15,13 @@ export class EmpresasService {
 
   async findAll(): Promise<Empresa[]> {
     return this.companyModel.find().exec();
+  }
+
+  async deleteById(companyId: string): Promise<Empresa> {
+    const deletedCompany = await this.companyModel.findByIdAndDelete(companyId).exec()
+    if (!deletedCompany) {
+      throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
+    }
+    return deletedCompany
   }
 }
