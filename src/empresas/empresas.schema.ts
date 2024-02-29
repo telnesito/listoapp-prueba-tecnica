@@ -6,27 +6,27 @@ export const CompanySchema = new mongoose.Schema({
 
   description: String,
 
-  location: String,
+  location: Array,
 
-  sector: String,
+  sector: Array,
 
   employees: Number,
 
   annualRevenue: Number,
 
-  website: String,
+  website: Array,
 
   email: String,
 
   foundedDate: Date,
 
-  phone: String,
+  phone: Array,
 
   status: String,
 
-  companyType: String,
+  companyType: Array,
 
-  services: String,
+  services: Array,
 
-  socialMedia: String
+  socialMedia: Object
 });

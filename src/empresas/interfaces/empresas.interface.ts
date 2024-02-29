@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { SocialMediaType } from "../dto/socialMediaType";
 
 export interface Company extends Document {
 
@@ -6,27 +7,27 @@ export interface Company extends Document {
 
   readonly description: string;
 
-  readonly location: string;
+  readonly location: string[];
 
-  readonly sector: string;
+  readonly sector: string[];
 
   readonly employees: number;
 
   readonly annualRevenue: number;
 
-  readonly website: string;
+  readonly website: string[];
 
   readonly email: string;
 
   readonly foundedDate: Date;
 
-  readonly phone: string;
+  readonly phone: string[];
 
   readonly status: string;
 
-  readonly companyType: string;
+  readonly companyType: string[];
 
-  readonly services: string;
+  readonly services: string[];
 
-  readonly socialMedia: string;
+  readonly socialMedia: SocialMediaType[];
 }

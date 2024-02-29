@@ -25,21 +25,21 @@ export class CompanyService {
   }
 
   async deleteById(companyId: string): Promise<Company> {
-    await this.validateCompanyExists(companyId)
-    const deletedCompany = await this.companyModel.findByIdAndDelete(companyId).exec()
-    return deletedCompany
+    await this.validateCompanyExists(companyId);
+    const deletedCompany = await this.companyModel.findByIdAndDelete(companyId).exec();
+    return deletedCompany;
   }
 
   async getCompanyById(companyId: string): Promise<Company> {
-    await this.validateCompanyExists(companyId)
-    const companyById = await this.companyModel.findById(companyId).exec()
-    return companyById
+    await this.validateCompanyExists(companyId);
+    const companyById = await this.companyModel.findById(companyId).exec();
+    return companyById;
   }
 
   async updateCompany(companyId: string, updateCompanyDto: CompanyInput): Promise<Company> {
-    await this.validateCompanyExists(companyId)
-    const updatedCompany = await this.companyModel.findByIdAndUpdate(companyId, updateCompanyDto, { new: true })
-    return updatedCompany
+    await this.validateCompanyExists(companyId);
+    const updatedCompany = await this.companyModel.findByIdAndUpdate(companyId, updateCompanyDto, { new: true });
+    return updatedCompany;
   }
 
 }

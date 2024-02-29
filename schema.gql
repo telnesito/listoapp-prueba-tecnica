@@ -2,22 +2,27 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type SocialMediaType {
+  platform: String
+  url: String
+}
+
 type CompanyType {
   id: ID!
   name: String!
   description: String!
-  location: String!
-  sector: String!
+  location: [String!]!
+  sector: [String!]!
   employees: Int!
   annualRevenue: Float
-  website: String
+  website: [String!]
   email: String!
   foundedDate: DateTime!
-  phone: String!
+  phone: [String!]!
   status: String!
-  companyType: String!
-  services: String!
-  socialMedia: String
+  companyType: [String!]!
+  services: [String!]!
+  socialMedia: [SocialMediaType!]
 }
 
 """
@@ -44,11 +49,11 @@ input CompanyInput {
   description: String!
 
   """La ubicación física de la empresa (dirección, ciudad, país)"""
-  location: String!
+  location: [String!]!
 
   """ El sector al que pertenece la empresa (tecnología, salud, finanzas, etc.)
   """
-  sector: String!
+  sector: [String!]!
 
   """ La cantidad de empleados que tiene la empresa."""
   employees: Int!
@@ -57,7 +62,7 @@ input CompanyInput {
   annualRevenue: Float
 
   """La dirección web de la empresa"""
-  website: String
+  website: [String!]
 
   """El correo electrónico de contacto de la empresa"""
   email: String!
@@ -66,7 +71,7 @@ input CompanyInput {
   foundedDate: DateTime!
 
   """El número de teléfono de la empresa."""
-  phone: String!
+  phone: [String!]!
 
   """
   Estado actual de la empresa (activo, inactivo, en proceso de liquidación, etc.)
@@ -74,13 +79,18 @@ input CompanyInput {
   status: String!
 
   """Puede ser una clasificación como PYME, startup, corporación, etc."""
-  companyType: String!
+  companyType: [String!]!
 
   """Este campo almacena el servicios que ofrezca la empresa"""
-  services: String!
+  services: [String!]!
 
   """
   Enlaces a perfiles de redes sociales de la empresa (LinkedIn, Twitter, etc.).
   """
-  socialMedia: String
+  socialMedia: [SocialMediaInput!]
+}
+
+input SocialMediaInput {
+  platform: String
+  url: String
 }

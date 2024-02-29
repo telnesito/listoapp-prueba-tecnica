@@ -8,32 +8,32 @@ export class CompanyResolver {
   constructor(
     private readonly companyService: CompanyService,
 
-  ) { }
+  ) { };
 
 
   @Query(() => [CompanyType])
   async getAllCompanys() {
-    return this.companyService.findAll()
+    return this.companyService.findAll();
   }
 
   @Mutation(() => CompanyType)
   async createCompanys(@Args('input') input: CompanyInput) {
-    return this.companyService.create(input)
+    return this.companyService.create(input);
   }
 
   @Mutation(() => CompanyType)
   async deleteCompanyById(@Args('_id') _id: string) {
-    return this.companyService.deleteById(_id)
+    return this.companyService.deleteById(_id);
   }
 
   @Query(() => CompanyType)
   async getCompanyById(@Args('_id') _id: string) {
-    return this.companyService.getCompanyById(_id)
+    return this.companyService.getCompanyById(_id);
   }
 
   @Mutation(() => CompanyType)
   async updateCompany(@Args('_id') _id: string, @Args('input') input: CompanyInput) {
-    return this.companyService.updateCompany(_id, input)
+    return this.companyService.updateCompany(_id, input);
   }
 
 
