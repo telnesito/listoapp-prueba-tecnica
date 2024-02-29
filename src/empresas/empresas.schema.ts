@@ -20,7 +20,7 @@ export const CompanySchema = new mongoose.Schema({
 
   foundedDate: Date,
 
-  phone: Number,
+  phone: String,
 
   status: String,
 

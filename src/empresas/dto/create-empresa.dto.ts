@@ -1,5 +1,5 @@
 import { Field, ID, Int, ObjectType } from "@nestjs/graphql";
-import { IsEmail } from "class-validator";
+import { IsEmail, IsNumberString } from "class-validator";
 
 @ObjectType()
 // Data transfer object
@@ -27,15 +27,16 @@ export class CompanyType {
 
   @Field({ nullable: true })
   readonly website: string;
+
   @IsEmail()
   @Field()
   readonly email: string;
 
   @Field()
   readonly foundedDate: Date;
-
-  @Field(() => Int)
-  readonly phone: number;
+  @IsNumberString()
+  @Field()
+  readonly phone: string;
 
   @Field()
   readonly status: string;

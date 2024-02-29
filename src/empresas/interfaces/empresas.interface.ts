@@ -20,7 +20,7 @@ export interface Company extends Document {
 
   readonly foundedDate: Date;
 
-  readonly phone: number;
+  readonly phone: string;
 
   readonly status: string;
 

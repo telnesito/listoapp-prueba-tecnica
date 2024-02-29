@@ -13,7 +13,7 @@ type CompanyType {
   website: String
   email: String!
   foundedDate: DateTime!
-  phone: Int!
+  phone: String!
   status: String!
   companyType: String!
   services: String!
@@ -45,7 +45,7 @@ input CompanyInput {
   website: String
   email: String!
   foundedDate: DateTime!
-  phone: Int!
+  phone: String!
   status: String!
   companyType: String!
   services: String!
