@@ -62,7 +62,7 @@ input CompanyInput {
   """El correo electrónico de contacto de la empresa"""
   email: String!
 
-  """La fecha en que fue fundada la empresa."""
+  """La fecha en que fue fundada la empresa yyyy-mm-dd."""
   foundedDate: DateTime!
 
   """El número de teléfono de la empresa."""
