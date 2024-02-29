@@ -24,4 +24,12 @@ export class EmpresasService {
     }
     return deletedCompany
   }
+
+  async getCompanyById(companyId: string): Promise<Empresa> {
+    const companyById = this.companyModel.findById(companyId)
+    if (!companyById) {
+      throw new NotFoundException("La empresa con el id " + companyId + " no fue encontrada")
+    }
+    return companyById
+  }
 }
