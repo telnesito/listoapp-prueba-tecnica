@@ -22,10 +22,14 @@ export class EmpresasResolver {
   }
 
   @Mutation(() => CreateCompanyDto)
-  async deleteCompanyById(@Args('id') id: string) {
-    return this.companyService.deleteById(id)
+  async deleteCompanyById(@Args('_id') _id: string) {
+    return this.companyService.deleteById(_id)
   }
 
+  @Query(() => CreateCompanyDto)
+  async getCompanyById(@Args('_id') _id: string) {
+    return this.companyService.getCompanyById(_id)
+  }
 
 
 }

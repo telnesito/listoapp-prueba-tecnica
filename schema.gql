@@ -27,11 +27,12 @@ scalar DateTime
 
 type Query {
   getAllCompanys: [CreateCompanyDto!]!
+  getCompanyById(_id: String!): CreateCompanyDto!
 }
 
 type Mutation {
   createCompanys(input: EmpresaInput!): CreateCompanyDto!
-  deleteCompanyById(id: String!): CreateCompanyDto!
+  deleteCompanyById(_id: String!): CreateCompanyDto!
 }
 
 input EmpresaInput {
